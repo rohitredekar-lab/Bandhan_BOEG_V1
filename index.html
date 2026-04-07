@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MMFSL BOEG V3</title>
+
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="header-left">
+            <!-- <button class="icon-btn back-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button> -->
+            <nav class="nav-links">
+                <div class="dropdown">
+                    <button class="nav-link-btn">
+                        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            <path d="M11 8v6"></path>
+                            <path d="M8 11h6"></path>
+                        </svg>
+                        BOEG Assessment
+                        <svg class="chevron-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                </div>
+                <div class="dropdown">
+                    <button class="nav-link-btn">
+                        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="8.5" cy="7" r="4"></circle>
+                            <polyline points="17 11 19 13 23 9"></polyline>
+                        </svg>
+                        Administration
+                        <svg class="chevron-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                </div>
+                <div class="dropdown">
+                    <button class="nav-link-btn">
+                        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                        Reports & Dashboards
+                        <svg class="chevron-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                </div>
+            </nav>
+        </div>
+        <div class="header-right">
+            <div class="user-info">
+                <span class="login-time">Last Login : 27-03-2026 14:08:36</span>
+                <div class="user-profile">
+                    <button class="profile-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="dashboard-container">
+        <div class="main-page-box">
+            <div class="mapping-header">
+                <div class="mapping-title">
+                    <h1>Entity-User Mapping</h1>
+                </div>
+                <div class="global-actions">
+                    <div class="view-mode-toggle">
+                        <span class="toggle-label">Mode:</span>
+                        <div class="toggle-group">
+                            <button class="toggle-btn active" data-mode="view">
+                                <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                                View Mode
+                            </button>
+                            <button class="toggle-btn" data-mode="edit">
+                                <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                </svg>
+                                Edit Mode
+                            </button>
+                        </div>
+                    </div>
+                    <button class="action-btn unselect-all-btn" style="display:none;">
+                        <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                        Unselect
+                    </button>
+                    <button class="action-btn export-btn">
+                        <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        Export
+                    </button>
+                    <button class="action-btn save-btn">
+                        <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+                            <polyline points="17 21 17 13 7 13 7 21"></polyline>
+                            <polyline points="7 3 7 8 15 8"></polyline>
+                        </svg>
+                        Save
+                    </button>
+                </div>
+            </div>
+
+            <div class="mapping-container">
+                <svg id="mapping-svg" class="mapping-canvas"></svg>
+                <div class="delete-btn-container" id="delete-btn-container"></div>
+
+                <!-- Column 1: Zones -->
+                <div class="mapping-column" data-type="zone">
+                    <div class="column-header zone-theme">
+                        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                        </svg>
+                        <span>Zones</span>
+                        <div class="column-header-actions">
+                            <button class="user-mapping-btn" title="User Access Mapping" data-column="zone">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="8.5" cy="7" r="4"></circle>
+                                    <polyline points="17 11 19 13 23 9"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="column-search">
+                        <div class="search-wrapper">
+                            <input type="text" placeholder="Search Zones..." class="column-search-input">
+                        </div>
+                    </div>
+                    <div class="column-list" id="zones-list"></div>
+                    <div class="column-footer" id="zone-footer"><span class="footer-count">0</span></div>
+                </div>
+
+                <!-- Column 2: States -->
+                <div class="mapping-column" data-type="state">
+                    <div class="column-header state-theme">
+                        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        <span>States</span>
+                        <div class="column-header-actions">
+                            <button class="user-mapping-btn" title="User Access Mapping" data-column="state">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="8.5" cy="7" r="4"></circle>
+                                    <polyline points="17 11 19 13 23 9"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="direction-toggle">
+                            <button class="dir-btn active" data-dir="both" title="Show All"><svg class="icon-xs"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M7 11V7l-5 5 5 5v-4h10v4l5-5-5-5v4z"></path>
+                                </svg></button>
+                            <button class="dir-btn" data-dir="backward" title="To Zones"><svg class="icon-xs"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M19 12H5M12 19l-7-7 7-7"></path>
+                                </svg></button>
+                            <button class="dir-btn" data-dir="forward" title="To Regions"><svg class="icon-xs"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                                </svg></button>
+                        </div>
+                    </div>
+                    <div class="column-search">
+                        <div class="search-wrapper">
+                            <input type="text" placeholder="Search States..." class="column-search-input">
+                        </div>
+                    </div>
+                    <div class="column-list" id="states-list"></div>
+                    <div class="column-footer" id="state-footer"><span class="footer-count">0</span></div>
+                </div>
+
+                <!-- Column 3: Regions -->
+                <div class="mapping-column" data-type="region">
+                    <div class="column-header region-theme">
+                        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                        <span>Regions</span>
+                        <div class="column-header-actions">
+                            <button class="user-mapping-btn" title="User Access Mapping" data-column="region">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="8.5" cy="7" r="4"></circle>
+                                    <polyline points="17 11 19 13 23 9"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="direction-toggle">
+                            <button class="dir-btn active" data-dir="both" title="Show All"><svg class="icon-xs"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M7 11V7l-5 5 5 5v-4h10v4l5-5-5-5v4z"></path>
+                                </svg></button>
+                            <button class="dir-btn" data-dir="backward" title="To States"><svg class="icon-xs"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M19 12H5M12 19l-7-7 7-7"></path>
+                                </svg></button>
+                            <button class="dir-btn" data-dir="forward" title="To Clusters"><svg class="icon-xs"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                                </svg></button>
+                        </div>
+                    </div>
+                    <div class="column-search">
+                        <div class="search-wrapper">
+                            <input type="text" placeholder="Search Regions..." class="column-search-input">
+                        </div>
+                    </div>
+                    <div class="column-list" id="regions-list"></div>
+                    <div class="column-footer" id="region-footer"><span class="footer-count">0</span></div>
+                </div>
+
+                <!-- Column 4: Clusters -->
+                <div class="mapping-column" data-type="cluster">
+                    <div class="column-header cluster-theme">
+                        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="14" width="7" height="7"></rect>
+                            <rect x="3" y="14" width="7" height="7"></rect>
+                        </svg>
+                        <span>Clusters</span>
+                        <div class="column-header-actions">
+                            <button class="user-mapping-btn" title="User Access Mapping" data-column="cluster">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="8.5" cy="7" r="4"></circle>
+                                    <polyline points="17 11 19 13 23 9"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="direction-toggle">
+                            <button class="dir-btn active" data-dir="both" title="Show All"><svg class="icon-xs"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M7 11V7l-5 5 5 5v-4h10v4l5-5-5-5v4z"></path>
+                                </svg></button>
+                            <button class="dir-btn" data-dir="backward" title="To Regions"><svg class="icon-xs"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M19 12H5M12 19l-7-7 7-7"></path>
+                                </svg></button>
+                            <button class="dir-btn" data-dir="forward" title="To Branches"><svg class="icon-xs"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                                </svg></button>
+                        </div>
+                    </div>
+                    <div class="column-search">
+                        <div class="search-wrapper">
+                            <input type="text" placeholder="Search Clusters..." class="column-search-input">
+                        </div>
+                    </div>
+                    <div class="column-list" id="clusters-list"></div>
+                    <div class="column-footer" id="cluster-footer"><span class="footer-count">0</span></div>
+                </div>
+
+                <!-- Column 5: Branches -->
+                <div class="mapping-column" data-type="branch">
+                    <div class="column-header branch-theme">
+                        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 21v-4a4 4 0 1 1 4 4H3z"></path>
+                            <path d="M3 7V3a4 4 0 1 1 4 4H3z"></path>
+                            <path d="M17 21v-4a4 4 0 1 1 4 4h-4z"></path>
+                            <path d="M17 7V3a4 4 0 1 1 4 4h-4z"></path>
+                        </svg>
+                        <span>Branches</span>
+                        <div class="column-header-actions">
+                            <button class="user-mapping-btn" title="User Access Mapping" data-column="branch">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="8.5" cy="7" r="4"></circle>
+                                    <polyline points="17 11 19 13 23 9"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="column-search">
+                        <div class="search-wrapper">
+                            <input type="text" placeholder="Search Branches..." class="column-search-input">
+                        </div>
+                    </div>
+                    <div class="column-list" id="branches-list"></div>
+                    <div class="column-footer" id="branch-footer"><span class="footer-count">0</span></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
